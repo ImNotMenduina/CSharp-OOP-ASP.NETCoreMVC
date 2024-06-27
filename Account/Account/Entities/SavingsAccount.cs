@@ -17,14 +17,9 @@
             this.Balance += Balance * InterestRate;
         }
 
-        public override string ToString()
+        public override void Withdraw(double amount)
         {
-            return "Account: "
-                + Number
-                + ", Client: "
-                + Holder
-                + ", Balance: "
-                + Balance;
+            Balance -= amount;
         }
     }
 }

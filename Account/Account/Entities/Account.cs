@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Account.Entities
+namespace Acc.Entities
 {
     internal class Account
     {

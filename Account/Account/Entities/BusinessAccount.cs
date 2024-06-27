@@ -1,4 +1,4 @@
-﻿namespace Account.Entities
+﻿namespace Acc.Entities
 {
     internal class BusinessAccount : Account
     {

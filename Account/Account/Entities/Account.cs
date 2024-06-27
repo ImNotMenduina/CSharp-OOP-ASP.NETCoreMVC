@@ -17,14 +17,15 @@ namespace Acc.Entities
             this.Balance = balance;
         }
 
-        public void Withdraw(double amount)
+        //virtual : o método pode ser sobrescrito/sobreposto nas subclasses
+        public virtual void Withdraw(double amount)
         {
-            this.Balance -= amount;
+            this.Balance -= amount + 5.00;
         }
 
         public void Deposit(double amount)
         {
-            this.Balance += amount;
+            this.Balance += amount + 5.00;
         }
 
         public override string ToString()

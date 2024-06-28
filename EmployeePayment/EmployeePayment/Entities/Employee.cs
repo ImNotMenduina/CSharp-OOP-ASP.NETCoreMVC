@@ -19,9 +19,10 @@ namespace EmployeePayment.Entities
 
         public string Name { get { return _name; } }
         public int Hours { get { return _hours; } }
-        public double ValuePerHour {  get { return _valuePerHour; } }
-        public virtual double payment() {  
-            return _valuePerHour * _hours; 
+        public double ValuePerHour { get { return _valuePerHour; } }
+        public virtual double payment()
+        {
+            return _valuePerHour * _hours;
         }
         public override string ToString()
         {

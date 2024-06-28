@@ -24,7 +24,7 @@
         public override void Withdraw(double amount)
         {
             base.Withdraw(amount); // taxa normal de saque (5.00 reais)
-            this.Balance -= 2.0; //-2.00 reais
+            this.Balance -= 5.00;
         }
     }
 }

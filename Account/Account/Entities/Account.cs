@@ -2,7 +2,7 @@
 
 namespace Acc.Entities
 {
-    internal class Account
+    abstract internal class Account
     {
         public int Number { get; protected set; }
         public string Holder { get; protected set; }

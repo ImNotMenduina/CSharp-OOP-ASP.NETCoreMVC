@@ -9,5 +9,9 @@
         { 
             AdditionalCharge = additionalCharge;
         }
+        public override double payment()
+        {
+            return base.payment() * 1.1;
+        }
     }
 }

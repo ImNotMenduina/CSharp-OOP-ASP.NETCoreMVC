@@ -27,7 +27,9 @@ namespace CarRentalInvoice
 
             CarRental carRental = new CarRental(start, finish, new Vehicle(model));
 
-            RentalService rentalService = new RentalService(hour, day);
+            //dependency inversion
+            //upcasting BrazilTaxService -> TaxService
+            RentalService rentalService = new RentalService(hour, day, new BrazilTaxService());
 
             rentalService.ProcessInvoice(carRental);
 

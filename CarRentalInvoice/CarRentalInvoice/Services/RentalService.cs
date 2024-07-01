@@ -8,11 +8,15 @@ namespace CarRentalInvoice.Services
         public double PricePerHour { get; private set; }
         public double PricePerDay { get; private set; }
 
-        private BrazilTaxService _brazilTextService = new BrazilTaxService();
+        //This is wrong cause RentalServices only works for BrazilTazService.
+        //private BrazilTaxService _brazilTextService = new BrazilTaxService();
 
-        public RentalService(double pricePerHour, double pricePerDay)
+        private ITaxService _taxService;
+
+        //dependency inversion
+        public RentalService(double pricePerHour, double pricePerDay, ITaxService taxService) 
         {
-            PricePerHour = pricePerHour; PricePerDay = pricePerDay;
+            PricePerHour = pricePerHour; PricePerDay = pricePerDay; ; _taxService = taxService;
         }
 
         public void ProcessInvoice(CarRental carRental)
@@ -29,7 +33,7 @@ namespace CarRentalInvoice.Services
                 basicPayment = PricePerDay * Math.Ceiling(duration.TotalDays);
             }
 
-            double tax = _brazilTextService.Tax(basicPayment);
+            double tax = _taxService.Tax(basicPayment);
 
             carRental.Invoice = new Invoice(basicPayment, tax);
         }
